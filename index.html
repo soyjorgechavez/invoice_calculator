@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <head lang="es">
 	<meta charset="utf-8">
-	<meta title="Calcula tu Factura">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calcula tu Factura</title>
+	<link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-	<h1>Calclua los montos para tu factura 2</h1>
-	<div class="form">
-		<form>
-			<label for="amount">Monto a facturar: <input type="text" id="amount" name="amount"></label>
-		<label for="mode">Tipo de Monto: <select id="mode" name="mode">
-				<option value="before_tax">IVA no incluído</option>
-				<option value="after_tax">IVA incluído</option>
-			</select>
-		</label>
-		</form>
-	</div>
+	<main>
+		<div class="title">
+			<h1>Calclua los montos para tu factura</h1>
+		</div>
+		
+		<div class="form">
+			<div class="form-container">
+				<label for="monto">Monto a facturar: </label><input type="text" id="monto" onkeyup="calcInvoice()">
+				<label for="mode">Tipo de Impuesto: </label><select id="mode" name="mode" onchange="calcInvoice()">
+						<option value="before_tax">más IVA</option>
+						<option value="after_tax">IVA incluído</option>
+					</select>
+					
+			</div>
+			
+		</div>
+		
+		<div id="result">
+			
+		</div>
+	</main>
+		<p class="credits">By Zevahc</p>
+	<script type="text/javascript" src="./functions.js"></script>
+</body>
+
+</html>
 

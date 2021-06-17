@@ -1,33 +1,28 @@
-/*
-Calculadora de montos en factura.
-1. Obtener monto.
-2. Seleccionar IVA inc o sin IVA.
-3. Calcular base grabable y el IVA.
-4. Mostrar Monto, IVA Y Total.
-
-FIN */
-
-var amount = 2500;
-var mode = "after_tax";
 var tax_rate = 16;
 var tax = tax_rate / 100;
 var taxin = 1 + tax;
 
-function calcInvoice(pay,mod){
-	  if(mod == "after_tax"){
-		      let primitive = pay / taxin;
+function calcInvoice(){
+	let amount = parseFloat(document.getElementById('monto').value);
+	let mode = document.getElementById("mode").value;
+	
+	if(amount != null && !isNaN(amount) && amount >= 0){
+		if(mode == "after_tax"){
+		      let primitive = amount / taxin;
 		      let iva = primitive * tax;
 		      let total = primitive + iva;
-		      console.log (primitive);
-		      console.log (iva);
-		      console.log (total);
-		    }else if(mod == "before_tax"){
-			        let iva = pay * tax;
-			        let total = pay + iva;
-			        console.log (pay);
-			        console.log (iva);
-			        console.log (total);
-			      }
+		      let result = document.getElementById("result");
+			  result.innerHTML ="<ul><li>Monto facturado: $"+primitive.toFixed(2)+"</li><li>IVA: $"+iva.toFixed(2)+"</li><li>Total: $"+total.toFixed(2)+"</li></ul>";
+		    }else if(mode == "before_tax"){
+			  let iva = amount * tax;
+			  let total = amount + iva;
+			  let result = document.getElementById("result");
+			  result.innerHTML ="<ul><li>Monto facturado: $"+amount.toFixed(2)+"</li><li>IVA: $"+iva.toFixed(2)+"</li><li>Total: $"+total.toFixed(2)+"</li></ul>";
+			}
+	}
+	
+	
+				  
 }
 
-calcInvoice(amount,mode);
+
