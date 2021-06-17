@@ -34,7 +34,7 @@ main{
 	margin: 0 auto;
 	text-align: center;
 	width:90%;
-	max-width: 500px;
+	max-width: 300px;
 }
 
 .form-container label,input,select{
@@ -62,7 +62,7 @@ main{
 	list-style: none;
 	padding:20px;
 	margin:0 auto;
-	width: 500px;
+	width: 300px;
 }
 
 #result ul li{
