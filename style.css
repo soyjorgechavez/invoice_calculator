@@ -62,7 +62,8 @@ main{
 	list-style: none;
 	padding:20px;
 	margin:0 auto;
-	width: 300px;
+	width: 90%;
+	max-width: 300px;
 }
 
 #result ul li{
